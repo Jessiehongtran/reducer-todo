@@ -9,7 +9,11 @@ export const initialState = {
 
 
 export const Reducer = (state, action) => {
+    console.log('state in Reducer', state)
+    console.log('action in Reducer', action)
+
     switch(action.type) {
+        
         case 'ADD_TASK':
             return { 
                 ...state,
@@ -17,6 +21,15 @@ export const Reducer = (state, action) => {
                 completed: false,
                 id: Date.now()
                 }]
+            }
+        case 'TOGGLE_TASK':
+
+            return {
+               ...state,
+               todos: state.todos.map(task => task.id === action.payload ? 
+                {...task, completed: !task.completed} : task
+                   
+               )
             }
 
         default:
