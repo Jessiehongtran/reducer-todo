@@ -1,9 +1,10 @@
 import React from 'react';
 
-const TodoList = () => {
+const TodoList = (props) => {
+    console.log('props in TodoList', props)
 
     return (
-        <div> </div>
+        <div>{props.data.item}</div>
     )
 }
 
