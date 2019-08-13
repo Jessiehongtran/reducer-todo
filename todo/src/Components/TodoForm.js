@@ -20,6 +20,7 @@ const TodoForm = () => {
 
     const toggleTask = (id) => dispatch({type: 'TOGGLE_TASK', payload: id})
 
+    const clearCompleted = () => dispatch({type: 'CLEAR_TASK'})
 
     return (
         
@@ -34,8 +35,12 @@ const TodoForm = () => {
                />
                <button onClick={() => dispatch({type: 'ADD_TASK', payload: newTask})}>Add task</button> 
 
+
                 {state.todos.map(task => <TodoList key={task.id} data={task} toggleTask={toggleTask} clearCompleted ={clearCompleted}/>)}
                
+               <button
+               onClick = {() => clearCompleted(state.todos.completed)}
+               >Clear Completed</button>
             </form>
         </div>
     )

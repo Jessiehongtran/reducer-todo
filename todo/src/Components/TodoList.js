@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const TodoList = (props) => {
     console.log('props in TodoList', props)
 
@@ -7,11 +8,7 @@ const TodoList = (props) => {
         <div 
         className = {`task ${props.data.completed ? 'completed' : ''}`}
         onClick = {()=> props.toggleTask(props.data.id)}
-        >{props.data.item}
-
-        <button
-        onClick = {() => props.clearCompleted(props.data.completed)}
-        >Clear Completed</button>
+        >{props.data.item}       
         </div>
         
     )
