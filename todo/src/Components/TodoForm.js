@@ -1,9 +1,19 @@
-import React from 'react';
+import React, {useState} from 'react';
 
-const TodoForm = () => {
+const TodoForm = (props) => {
+    console.log('props in TodoForm', props)
 
     return (
-        <div> </div>
+        <div>
+            <form>
+               <input 
+                type="text"
+                name="task"
+
+               />
+               <button>Add task</button> 
+            </form>
+        </div>
     )
 }
 

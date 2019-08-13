@@ -5,16 +5,17 @@ import TodoForm from './Components/TodoForm'
 import TodoList from './Components/TodoList'
 
 function App() {
-  const [newtask, setNewTask] = useState()
+  const [newTask, setNewTask] = useState()
 
   const [state, dispatch] = useReducer(Reducer, initialState)
   console.log('state', state)
+  
   
 
   return (
     <div className="App">
       <h1>Hello, what are your things to do today?</h1>
-      <TodoForm />
+      <TodoForm data={newTask}/>
       <TodoList data={state}/>
     </div>
   );
