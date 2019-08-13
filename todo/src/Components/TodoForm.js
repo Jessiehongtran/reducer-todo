@@ -1,5 +1,6 @@
 import React, {useState, useReducer} from 'react';
 import {initialState, Reducer} from '../Reducers/reducer'
+import TodoList from './TodoList'
 
 const TodoForm = () => {
     const [newTask, setNewTask] = useState()
@@ -14,6 +15,7 @@ const TodoForm = () => {
     const handleSubmit = e => {
         e.preventDefault();
         console.log('submit', e)
+        
     }
 
     return (
@@ -24,9 +26,10 @@ const TodoForm = () => {
                 value={newTask}
                 name="task"
                 onChange={handleChange}
-
                />
                <button onClick={() => dispatch({type: 'ADD_TASK', payload: newTask})}>Add task</button> 
+
+               <TodoList data={state}/>
             </form>
         </div>
     )

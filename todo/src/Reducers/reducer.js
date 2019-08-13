@@ -1,7 +1,9 @@
 export const initialState = {
+    todos: [{
     item: 'Learn about reducers',
     completed: false,
     id: 3892987589
+}]
 }
 
 
@@ -11,7 +13,8 @@ export const Reducer = (state, action) => {
         case 'ADD_TASK':
             return {
                 ...state,
-                item: action.payload
+                item: action.payload,
+                id: Date.now()
             }
 
         default:
