@@ -19,7 +19,9 @@ const TodoForm = () => {
     }
 
     return (
+        
         <div>
+           {console.log('state in return', state)}
             <form onSubmit={handleSubmit}>
                <input 
                 type="text"
@@ -29,7 +31,8 @@ const TodoForm = () => {
                />
                <button onClick={() => dispatch({type: 'ADD_TASK', payload: newTask})}>Add task</button> 
 
-               <TodoList data={state}/>
+                {state.todos.map(task => <TodoList key={task.id} data={task}/>)}
+               
             </form>
         </div>
     )

@@ -1,10 +1,10 @@
-export const initialState = 
-    [{
+export const initialState = {
+    todos: [{
     item: 'Learn about reducers',
     completed: false,
     id: 3892987589
 }]
-
+}
 
 
 
@@ -12,10 +12,11 @@ export const Reducer = (state, action) => {
     switch(action.type) {
         case 'ADD_TASK':
             return { 
-                todos: [...state,
-                {item: action.payload,
-                id: Date.now(),
-                completed: false}]
+                ...state,
+                todos: [...state.todos,{item: action.payload,
+                completed: false,
+                id: Date.now()
+                }]
             }
 
         default:
