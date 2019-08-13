@@ -8,7 +8,11 @@ export const initialState = {
 
 export const Reducer = (state, action) => {
     switch(action.type) {
-
+        case 'ADD_TASK':
+            return {
+                ...state,
+                item: action.payload
+            }
 
         default:
             return state;

@@ -1,22 +1,16 @@
-import React, {useState, useReducer} from 'react';
-import {initialState, Reducer} from './Reducers/reducer'
+import React from 'react';
 import './App.css';
 import TodoForm from './Components/TodoForm'
 import TodoList from './Components/TodoList'
 
 function App() {
-  const [newTask, setNewTask] = useState()
-
-  const [state, dispatch] = useReducer(Reducer, initialState)
-  console.log('state', state)
-  
   
 
   return (
     <div className="App">
       <h1>Hello, what are your things to do today?</h1>
-      <TodoForm data={newTask}/>
-      <TodoList data={state}/>
+      <TodoForm />
+      <TodoList/>
     </div>
   );
 }
