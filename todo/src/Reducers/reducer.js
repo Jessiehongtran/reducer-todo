@@ -16,7 +16,7 @@ export const Reducer = (state, action) => {
         
         case 'ADD_TASK':
             return { 
-                ...state,
+                // ...state,
                 todos: [...state.todos,{item: action.payload,
                 completed: false,
                 id: Date.now()
